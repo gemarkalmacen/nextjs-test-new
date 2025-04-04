@@ -1,3 +1,4 @@
+import { getDjangoApiHost } from "@/functions/env";
 import axios from "axios";
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -25,7 +26,7 @@ export const authOptions: NextAuthOptions = {
         try {
           // Make API call to validate user credentials
           const response = await axios.post(
-            "https://devapi.surigaocity.gov.ph/api/account/auth/login/",
+            `${getDjangoApiHost()}/api/account/auth/login/`,
             {
               username: credentials.username,
               password: credentials.password,
