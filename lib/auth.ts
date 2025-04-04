@@ -26,7 +26,8 @@ export const authOptions: NextAuthOptions = {
         try {
           // Make API call to validate user credentials
           const response = await axios.post(
-            `${getDjangoApiHost()}/api/account/auth/login/`,
+            // `${getDjangoApiHost()}/api/account/auth/login/`,
+            `https://devapi.surigaocity.gov.ph/api/account/auth/login/`,
             {
               username: credentials.username,
               password: credentials.password,
